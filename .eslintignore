@@ -1,0 +1,5 @@
+storybook-static/
+public/
+commitlint.config.js
+vite.config.ts
+src/@core/
