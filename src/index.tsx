@@ -5,10 +5,8 @@ import App from './pages/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
+  document.getElementById('containerWidget') as HTMLElement,
 );
-
-console.log(root);
 
 root.render(
   <React.StrictMode>
