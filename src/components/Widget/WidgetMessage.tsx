@@ -8,7 +8,9 @@ const WidgetMessage: FC<WidgetMessageProps> = ({
 }) => (
   <div
     className={`widget-content-body-messageStory-content ${
-      from === 'admin' ? 'fromUser' : 'fromYou'
+      from === 'admin'
+        ? 'widget-content-body-messageStory-content-fromUser'
+        : 'widget-content-body-messageStory-content-fromYou'
     }`}
   >
     {/*{item.avatar && (*/}
@@ -18,19 +20,25 @@ const WidgetMessage: FC<WidgetMessageProps> = ({
     {/*)}*/}
     <div
       className={`widget-content-body-messageStory-message ${
-        from === 'admin' ? 'fromUser' : 'fromYou'
+        from === 'admin'
+          ? 'widget-content-body-messageStory-message-fromUser'
+          : 'widget-content-body-messageStory-message-fromYou'
       }`}
     >
       <p
         className={`widget-content-body-messageStory-message__text ${
-          from === 'admin' ? 'fromUser' : 'fromYou'
+          from === 'admin'
+            ? 'widget-content-body-messageStory-message__text-fromUser'
+            : 'widget-content-body-messageStory-message__text-fromYou'
         }`}
       >
         {message}
       </p>
       <span
         className={`widget-content-body-messageStory-message__time ${
-          from === 'admin' ? 'fromUser' : 'fromYou'
+          from === 'admin'
+            ? 'widget-content-body-messageStory-message__time-fromUser'
+            : 'widget-content-body-messageStory-message__time-fromYou'
         }`}
       >
         {timestamp}

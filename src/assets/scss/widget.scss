@@ -10,8 +10,10 @@
   border-radius: 10px 25px 0px 0px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.35);
   transition: max-height 0.4s;
+  opacity: 1;
+  z-index: 999999999;
 
-  &.close {
+  &-close {
     max-height: 40px;
     min-height: 5%;
     overflow: hidden;
@@ -49,7 +51,7 @@
       padding-left: 15px;
       user-select: none;
 
-      &.open {
+      &-open {
         cursor: move;
       }
 
@@ -65,11 +67,11 @@
         font-family: "ML", sans-serif;
         transition: opacity 0.4s;
 
-        &.close {
+        &-close {
           opacity: 0;
         }
 
-        &.open {
+        &-open {
           opacity: 1;
         }
       }
@@ -80,6 +82,7 @@
       padding: 10px 15px 10px 15px;
       overflow-y: scroll;
       scroll-behavior: smooth;
+      background-color: #fff;
 
       &-messageStory {
         display: flex;
@@ -90,7 +93,7 @@
           align-items: center;
           margin-bottom: 20px;
 
-          &.fromYou {
+          &-fromYou {
             justify-content: end;
           }
         }
@@ -115,7 +118,7 @@
           border-radius: 10px;
           background-color: #f1f0f0;
 
-          &.fromYou {
+          &-fromYou {
             background-color: #18c139;
           }
 
@@ -126,11 +129,11 @@
             line-height: inherit;
             vertical-align: middle;
 
-            &.fromUser {
+            &-fromUser {
               color: #222d38;
             }
 
-            &.fromYou {
+            &-fromYou {
               color: #fff;
             }
           }
@@ -140,11 +143,11 @@
             font-size: 12px;
             padding-left: 5px;
 
-            &.fromUser {
+            &-fromUser {
               color: #9d9e9f;
             }
 
-            &.fromYou {
+            &-fromYou {
               color: #fff9;
             }
           }
@@ -156,6 +159,7 @@
       position: relative;
       height: 110px;
       border-top: 1px solid rgba(0, 0, 0, 0.2);
+      background-color: #fff;
 
       &-messageArea {
         font-size: 15px;

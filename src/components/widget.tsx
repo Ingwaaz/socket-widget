@@ -46,7 +46,9 @@ const Widget: FC<WidgetProps> = ({
 
   return (
     <div
-      className={`socket-widget ${openWidget ? 'open' : 'close'}`}
+      className={`socket-widget ${
+        openWidget ? 'socket-widget-open' : 'socket-widget-close'
+      }`}
       id="resizeMe"
     >
       <div className="widget-content">
@@ -59,7 +61,11 @@ const Widget: FC<WidgetProps> = ({
           </div>
         )}
         <div
-          className={`widget-content-header ${openWidget ? 'open' : 'close'}`}
+          className={`widget-content-header ${
+            openWidget
+              ? 'widget-content-header-open'
+              : 'widget-content-header-close'
+          }`}
           onClick={() => setOpenWidget(true)}
           onMouseDown={() => resizeEvent(widgetMovingContainer)}
         >
@@ -68,7 +74,9 @@ const Widget: FC<WidgetProps> = ({
           </span>
           <span
             className={`widget-content-header__desc ${
-              openWidget ? 'open' : 'close'
+              openWidget
+                ? 'widget-content-header__desc-open'
+                : 'widget-content-header__desc-close'
             }`}
           >
             Операторы онлайн!
