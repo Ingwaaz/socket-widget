@@ -24,21 +24,28 @@ const WidgetInput: FC<WidgetInputProps> = ({
     setTimeoutId(timeout);
   };
 
+  const changeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.value.trim() === '') return;
+    setterMessageValue(e.target.value);
+    typingHandler();
+  };
+
   return (
     <form className="widget-content-sendField">
       <textarea
         className="widget-content-sendField-messageArea"
         placeholder="Введите сообщение"
         value={messageValue}
-        onChange={(e) => {
-          setterMessageValue(e.target.value);
-          typingHandler();
-        }}
+        onChange={(e) => changeHandler(e)}
       />
       <button
         className="widget-content-sendField-sendButton"
         type="submit"
-        onClick={(e: React.MouseEvent) => setterSendHandler(e, messageValue)}
+        onClick={(e: React.MouseEvent) => {
+          e.preventDefault();
+          if (messageValue === '') return;
+          setterSendHandler(e, messageValue);
+        }}
       />
     </form>
   );
